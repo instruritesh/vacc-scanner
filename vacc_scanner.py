@@ -91,7 +91,7 @@ class CowinScanner():
                     for session in sessions_list:
                         availability = session.get('available_capacity')
                         age_limit = session.get('min_age_limit')
-                        if availability >= 0 and age_limit >= MIN_AGE_LIMIT:
+                        if availability > 0 and age_limit >= MIN_AGE_LIMIT:
                             slot_available = slot_available + availability
                             notify_dict[center_name] = {'slots': slot_available, 'age': age_limit}
         return notify_dict
